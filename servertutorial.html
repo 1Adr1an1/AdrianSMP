@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<link rel="shortcut icon" type="image/jpg" href="icon.png"/>
+<title>How to make your own Minecraft server</title>
+<a href="index.html">
+    <button>Home</button>
+</a>
+<body style="background-color:gainsboro"></body>
+<html>
+    <head>
+        <div align="center">
+        <h1 style="font-family:Arial, Helvetica, sans-serif">How to make your own Minecraft server</h1>
+        <h2 style="font-family:Arial, Helvetica, sans-serif">For free</h2>
+        </div>
+    </head>
+</html>
+<p style="font-family:sans-serif">This tutorial will show you how to make your own Minecraft server. This is the easiest and
+     safest way to host a server.
+    Before we begin, make sure you are using Windows.
+    You can also use Linux distributions, like Ubuntu Server,
+     but it's much harder.
+     Anyway, lets start!
+     (This tutorial will only show how to do it on Windows.)
+</p>
+<p style="font-family:sans-serif">Step 1</h2>
+<p style="font-family:sans-serif">Click "Download Java" below. It will automatically download Java.</p>
+<a href="https://cdn.azul.com/zulu/bin/zulu18.32.13-ca-jdk18.0.2.1-win_x64.msi">
+    <button>Download Java</button>
+</a>
+<p style="font-family:sans-serif">File source: https://azul.com</p>
+<p style="font-family:sans-serif">Step 2</h2>
+<p style="font-family:sans-serif">When the .msi file finishes installing, open it. 
+    After waiting for about 15 seconds, you should see this:
+</p>
+<img src="java.png"/>
+<p style="font-family:sans-serif">Click "Next".</p>
+<p style="font-family:sans-serif">On the next page, leave everything as it is, and click "Next" again.</p>
+<p style="font-family:sans-serif">Next page - This is what you should see.</p>
+<img src="javainstall.png"/>
+<p style="font-family:sans-serif">Click "Install".</p>
+<p style="font-family:sans-serif">Wait for it to install. This should take up to 1 minute.</p>
+<p style="font-family:sans-serif">After it finishes, you will see this:</p>
+<img src="javafinished.png"/>
+<p style="font-family:sans-serif">Java is installed. Now, we can move on to the other part.</h3>
+<div align="center">
+<p style="font-family:sans-serif">Installing the Minecraft server.jar file & Installing ngrok</h1>
+</div>
+<p style="font-family:sans-serif">Ngrok is an app used for port forwarding. Not only, but we will use it only for this.</p>
+<p style="font-family:sans-serif">Step 1</h2>
+<p style="font-family:sans-serif">Click the "Download ngrok" button below. Ngrok will automatically start downloading.</p>
+<a href="https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip">
+    <button>Download ngrok</button>
+</a>
+<p style="font-family:sans-serif">File source: https://ngrok.com</p>
+<p style="font-family:sans-serif">Step 2</h2>
+<p style="font-family:sans-serif">Now, unzip the downloaded file.</p>
+<p style="font-family:sans-serif">Step 3</h2>
+<p style="font-family:sans-serif">Open the <strong><i>ngrok.exe</i></strong> file.</p>
+<p style="font-family:sans-serif">No installation required!</p>
+<p style="font-family:sans-serif">After opening ngrok, you should see this:</p>
+<img src="ngrok.png"/>
+<p style="font-family:sans-serif"v>Before we continue, we need to create an account in ngrok. Don't worry - It's free!</p>
+<p style="font-family:sans-serif">Click the "Sign up" button below.</p>
+<a href="https://dashboard.ngrok.com/signup">
+    <button>Sign up</button>
+</a>
+<p style="font-family:sans-serif">Pro tip: Right click the button > open in new tab.</p>
+<p style="font-family:sans-serif">You should see this:</p>
+<img src="ngroksignup.png"/>
+<p style="font-family:sans-serif">Put your name, e-mail, and password. Do the verification, ckeck the "I accept......" box and click sign up!</p>
+<p style="font-family:sans-serif">Before you continue, check your e-mail. Ngrok sent you one, to verify your e-mail address.</p>
+<p style="font-family:sans-serif">You should now see this:</p>
+<img src="ngrokui.png"/>
+<p style="font-family:sans-serif">Expand the "Getting started" category, and select "Your authtoken".</p>
+<p style="font-family:sans-serif">You can also click the "Get authtoken" button below. It will take you to the authtoken page.</p>
+<a href="https://dashboard.ngrok.com/get-started/your-authtoken">
+    <button>Get authtoken</button>
+</a>
+<p style="font-family:sans-serif">WARNING: DO NOT SHARE THE AUTHTOKEN WITH ANYONE, AS THEY WILL GET ACCESS TO YOUR ACCOUNT.</h3>
+<p style="font-family:sans-serif">Once someone gets your authtoken, they are 1 command away from logging in to your account.</h3>
+<p style="font-family:sans-serif">Once you're in the authtoken page, click the blue "copy" button next to your authtoken.</p>
+<img src="authtoken.png"/>
+<p style="font-family:sans-serif">Your authtoken is now copied to your clipboard.</p>
+<p style="font-family:sans-serif">Now, get back to your ngrok app, and type this:</p>
+<p style="font-family:sans-serif"><strong>ngrok authtoken [your-authtoken] </strong></p>
+<p style="font-family:sans-serif">For example: <strong><i>ngrok authtoken 4cyakrfhv48ytv9mydotv4v8myoiyfmoy3wyo</i></strong></p>
+<p style="font-family:sans-serif"><i>That's not a real authtoken!</i></p>
+<p style="font-family:sans-serif">Step 4</h2>
+<p style="font-family:sans-serif">Your authtoken is now saved in your ngrok app.</p>
+<p style="font-family:sans-serif">This is the last command you have to type in ngrok!</p>
+<p style="font-family:sans-serif">In your ngrok app, type this command:</p>
+<p style="font-family:sans-serif"><strong><i>ngrok tcp 25565</i></strong></p>
+<p style="font-family:sans-serif">After that, you should see something similar to this:</p>
+<img src="ngrokip.png"/>
+<p style="font-family:sans-serif">Please remember, that everytime you restart ngrok, you will have to type <strong><i>ngrok tcp 25565</i></strong> again, and your IP will change.</p>
+<p style="font-family:sans-serif">By the way, your IP will look something like this:</p>
+<img src="ngrokip2.png"/>
+<p style="font-family:sans-serif">Select the IP, and press <strong>ctrl+c</strong> on your keyboard to copy it.</p>
+<p style="font-family:sans-serif">This is the IP you will give to your friends.</h3>
+<div align="center">
+    <p style="font-family:sans-serif">Installing the server.jar file.</h1>
+</div>
+<p style="font-family:sans-serif">Now, the last step - installing the server itself.</p>
+<p style="font-family:sans-serif">Step 1</h2>
+<p style="font-family:sans-serif">Click the "Download server.jar" button below. It will download the server.jar file for you.</p>
+<a href="https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar">
+    <button>Download server.jar</button>
+</a>
+<p style="font-family:sans-serif">Tip: We recommend going to <a href="https://www.minecraft.net/en-us/download/server">this website</a> and downloading the server.jar file from there, as it is always updated.</p>
+<p style="font-family:sans-serif">Once you download the server.jar file, create a new folder in your desktop, and name it whatever you want, but we recommend naming it "MinecraftServer".</p>
+<p style="font-family:sans-serif">Now, drag the server.jar file into the MinecraftServer folder, and double click it. Wait for about 30 seconds, and open the eula.txt file.
+    Inside of it, change "eula=false" to "eula=true".
+</p>
+<p style="font-family:sans-serif">After doing that, double click your server.jar file again.</p>
+<p style="font-family:sans-serif">If the server file isn't named exactly server.jar , rename it to "server.jar".</h3>
+<p style="font-family:sans-serif">After waiting for about 15-30 seconds, you should see a window pop up. It's your Minecraft server!</p>
+<img src="server.png"/>
+<p style="font-family:sans-serif">You can now either close that window, or leave it open. It doesn't matter.</p>
+<p style="font-family:sans-serif">Finally, click the "download file" button below. It will download a file named "StartServer.bat".</p>
+<p style="font-family:sans-serif">We recommend using this file to start the server, as it makes the server lag less. But, you can also start it by double clicking the server.jar file.</p>
+<a href="https://cdn.discordapp.com/attachments/953282650280460368/1014894749825650798/StartServer.bat">
+    <button>Download file</button>
+</a>
+<p style="font-family:sans-serif">Once it downloads, drag that file into your MinecraftServer folder.</p>
+<p style="font-family:sans-serif">And that's it!</h3>
+<p style="font-family:sans-serif">You now have a Minecraft server that you and your friends can join.</h4>
+<div align="center">
+    <p style="font-family:sans-serif">Have fun!</h1>
+</div>
