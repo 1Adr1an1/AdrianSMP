@@ -1,0 +1,91 @@
+<header style=font-family:sans-serif;background-color:gray;font-size:24px;width:1000px;height:50px;border:black;border-width:3px;border-style:dashed>
+    <!--Header buttons-->
+    <a href="index.html">
+    <button style="font-size:20px;position:relative;top:10px;right:-12px"><strong>Home</strong></button></a>
+    <a href="discord.html">
+    <button style="font-size:20px;position:relative;top:10px;right:-12px"><strong>Discord server</strong></button>
+    <a href="minecraft.html">
+        <style type="text/css">
+            .row { vertical-align: top; height:auto !important; }
+            .list {display:none; }
+            .show {display: none; }
+            .hide:target + .show {display: inline; }
+            .hide:target {display: none; }
+            .hide:target ~ .list {display:inline; }
+            @media print { .hide, .show { display: none; } }
+            </style>
+<div class="row">
+    <a href="#hide1" class="hide" id="hide1"><button style="position:relative;left:252px;font-size:20px;top:-20px"><strong>↓Minecraft SMP↓</strong></button></a>
+    <a href="#show1" class="show" id="show1"><button style="position:relative;left:252px;font-size:20px;top:-20px"><strong>↑Minecraft SMP↑</strong></button></a>
+    <div class="list">
+    <ul>
+    <a href="minecraft.html">
+    <button style="position:relative;left:211px;font-size:20px;top:-25px"><strong>Join the Minecraft SMP</strong></button></a>
+    <a href="serverinfo.html">
+    <button style="position:relative;left:-32px;font-size:20px;top:10px"><strong>AdrianSMP Server Hardware</strong></button></a>
+    <a href="servertutorial.html">
+    <button style="position:relative;left:-325px;font-size:20px;top:45px"><strong>(Tutorial)-Make your own Minecraft server!</strong></button></a>
+    </ul>
+    </div>
+    </div>
+    </a>
+</header>
+<div style="font-family:sans-serif;font-size:18px">
+<p style="color:red;font-size:24px"><strong>Server hosting warnings</strong></p>
+<p>
+    Please read this page carefully before hosting a server on your network.</p>
+    <p>
+    ------------------------------------------------------------------------------------------
+    </p>
+    <p>
+    1 - Hosting a server uses a lot of resources, such as CPU and RAM. If you host a server on the PC you normally use,
+    the server will make it run slower and possibly overheat it.
+    </p>
+    <p>
+    2 - A Minecraft server can be DDOS-ed very easily. That is illegal, but that doesn't mean your server and your network is protected from hackers. Even with ngrok being the safest method to host a server,
+    everyone can still DDOS it. Only give your ngrok IP to people you trust. Or- to people who don't know how to ddos ;)
+    It's so easy, that I'll show you how to do it with just 2 commands:
+    (Linux only)
+    </p>
+    <p>
+    sudo apt install hping3
+    </p>
+    <p>
+    sudo hping3 --faster [target IP]
+    </p>
+    <p>
+        Don't do this, it is illegal, and if you get caught, you will be arrested. Only do this on your server, or on someone <strong>if you have permission.</strong>
+    </p>
+    <p>
+    DDOS-ING OUR SERVER WILL RESULT IN A PERMANENT BAN FROM THE DISCORD AND MINECRAFT SERVER. APPEALS NOT ACCEPTED.
+</p>
+<p>
+    3 - Having a separate server running in your house uses a lot of electricity, and it can raise your electricity bill up to $50 a month.
+</p>
+<p>
+    4 - The server can overheat, and in very rare cases, it can catch on fire. Make sure you have a <strong>class c</strong> fire extinguisher next to your server.
+</p>
+<p>
+    5 - Set your fan speed to maximum RPM while your server is running. It will be loud, but it will lower the risk of fire.
+    To do that, download <a href="https://hwinfo.com/download">HWiNFO64</a>.
+</p>
+<p>
+    After it finishes installing, open it, and click on the fan icon on the bottom of the UI.
+</p>
+<p>
+    Drag the slider to "max", and click "set manual". You should start hearing your fans getting louder and louder. To set the fans to their normal speed, click "System auto" below.
+</p>
+<p>
+    6 - You need to either keep your server on 24/7, or NEVER SHUT IT DOWN. Instead, hibernate it.
+</p>
+<p>
+    Since the ngrok IP you got changes after you restart ngrok, you need a way to keep the app open, without leaving the PC on overnight. How? Hibernating. Open cmd, and type:
+</p>
+<p>
+    shutdown /h
+</p>
+<p>
+    That will hibernate your PC. When you turn it back on, the apps will stay open.
+</p>
+<p style="font-size:24px"><strong>Once you have read all the warnings and understand the risks of hosting a server, click <a href="servertutorial.html">here</a> to return to the tutorial page.</strong></p>
+</div>
