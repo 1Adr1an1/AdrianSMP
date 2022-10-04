@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <title>Linux Server Tutorial</title>
 <!--HEADER START-->
-<header style=font-family:sans-serif;background-color:gray;font-size:24px;width:1000px;height:50px;border:black;border-width:3px;border-style:dashed>
+<header style=font-family:sans-serif;background-color:gray;font-size:24px;width:1245px;height:50px;border:black;border-width:3px;border-style:dashed>
     <!--Header buttons-->
     <a href="index.html">
     <button style="font-size:20px;background-color:gray;position:relative;top:10px;right:-12px"><strong>Home</strong></button></a>
@@ -44,21 +44,21 @@
 <p>Step 1: Installing Java</p>
 <p>Run these commands ONE BY ONE. DO NOT PRESS CTRL+C. Ignore the lines that start with # .</p>
 <div style="background-color:rgb(26, 26, 26);color:white">
-<p>sudo apt update</p>
-<p>sudo apt install -y libc6-x32 libc6-i386</p>
-<p>wget https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.deb</p>
-<p>sudo dpkg -i jdk-18_linux-x64_bin.deb</p>
-<p>sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-18/bin/java 1</p>
-<p>#verify installation (optional)</p>
-<p>java -version</p>
+<pre>sudo apt update
+sudo apt install -y libc6-x32 libc6-i386
+wget https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.deb
+sudo dpkg -i jdk-18_linux-x64_bin.deb
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-18/bin/java 1
+verify installation (optional)
+java -version</pre>
 </div>
 <p>Java installation is finished. Now we can download the Minecraft server.jar file.</p>
 <p>Run these commands one by one.</p>
 <div style="background-color:rgb(26, 26, 26);color:white">
 <p>cd</p>
-<p>mkdir MinecraftServer</p>
+<pre>mkdir MinecraftServer</pre>
 <p>cd MinecraftServer</p>
-<p>wget https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar</p>
+<pre>wget https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar</pre>
 <p>java -Xmx1024M -Xms1024M -jar server.jar nogui</p>
 </div>
 <p>Now, you could say we're done. But, there's still something to do, so people from another network can join your server.</p>
@@ -67,22 +67,42 @@
 <p>So let's fix that.</p>
 <p>Run this command:</p>
 <div style="background-color:rgb(26, 26, 26);color:white">
-<p>nano eula.txt</p>
+<pre>nano eula.txt</pre>
 </div>
 <p>Use the arrow keys to move your cursor.</p>
 <p>Change eula=false to eula=true</p>
 <p>Then, press ctrl+x , y and enter.</p>
 <p>Then, try starting your server again:</p>
 <div style="background-color:rgb(26, 26, 26);color:white">
-<p>java -Xmx1024M -Xms1024M -jar server.jar nogui</p>
+<pre>java -Xmx1024M -Xms1024M -jar server.jar nogui</pre>
 </div>
 <p>This time, the server should start.</p>
 <p style="font-size:24px">Setting up playit (ngrok, but with a permanent address)</p>
 <p>Click <a style="text-decoration:none;" href="https://playit.gg/login">here</a>. Once in the website, create an account like you normally would in any other website.</p>
 <p>Once you're logged in, on the right, click "Add Tunnel".</p>
-<p>In your terminal, type "ip r" to find your computer's IP address.</p>
+<p>In your terminal, type "ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'" to find your computer's IP address.</p>
+<p>After running that command, you should see 2 lines in the terminal. The second one is your server's IP.</p>
 <p>In the playit website, once you clicked add tunnel, select "custom" for tunnel type, and click next.</p>
-<p>For local IPv4, enter the IP you got by running "ip r" in the terminal.</p>
+<p>For local IPv4, enter your server's IP.</p>
 <p>For local port, put 25565.</p>
 <p>Port type, select TCP. Port count = 1.</p>
 <p>Click create tunnel, and it's done.</p>
+<p>Now, you need to install playit on your server. Run these commands:</p>
+<div style="background-color:rgb(26, 26, 26);color:white">
+<pre># For Debian & Ubuntu based systems
+    curl -SsL https://playit-cloud.github.io/ppa/key.gpg | sudo apt-key add -
+    sudo curl -SsL -o /etc/apt/sources.list.d/playit-cloud.list https://playit-cloud.github.io/ppa/playit-cloud.list
+    sudo apt update
+    sudo apt install playit</pre>
+</div>
+<p>After you finish running the commands, type <i>playit</i> into your terminal. If you did everything correctly, you should see this:</p>
+<img src="playit.png">
+<p>Open the link next to where it says "Visit web page", and click "Allow" in the website that opens up.</p>
+<p>Open another terminal window, and run these commands: (If you're using Ubuntu Server as the main OS, press Alt+F2 to open another window. To go back to the previous one, press Alt+F1. --- If you're on WSL, simply open another cmd window and type <i>ubuntu</i>. That's the same thing as opening a new terminal window.)</p>
+<pre style="background-color:rgb(26, 26, 26);color:white">cd
+cd MinecraftServer
+java -Xmx1024M -Xms1024M -jar server.jar nogui
+</pre>
+<p>Tip: You can mess around with the numbers in <strong><i>-Xmx1024M</i></strong> and <strong><i>-Xms1024M</i></strong>. That's the amount of RAM your server can use (In MB. 1GB = 1000MB. For example, if your server has 8GB RAM installed, you have to leave at least 2GB for the OS itself to run. The rest can go for the server. For example, our server has 5GB RAM installed. Since the main OS is Ubuntu Server, it doesn't require too much RAM to run, so we allocated 4GB RAM to the Minecraft Server.)</p>
+</div>
+<h1 style="font-family:sans-serif">Now your server is finished. If you have any questions, join our Discord server and ask us there. Have fun!</h1>
